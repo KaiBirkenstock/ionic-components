@@ -1,0 +1,8 @@
+<div style="display: none;" id="{{target}}">
+  <div class="modal-wrapper {{size}} height-{{height}}">
+    <div class="modal-header" *ngIf="headline">
+      <h3>{{headline}}</h3>
+    </div>
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+$primary: #1E1934;
+$borderColor: #dddddd;
+$borderColorActive: $primary;
+$subTabComplementary: #ffffff;
+$subTabColor: #337ab7;
+
+tabset {
+  display: block;
+  margin: auto;
+  overflow: hidden;
+
+  div.tab-collection {
+    overflow: hidden;
+    border-bottom: 1px solid #eaecee;
+    background-color: transparent;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  tab {
+    float: left;
+    position: relative;
+    display: block;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: 1px solid transparent;
+    margin-bottom: -1px;
+
+    &.active, &:hover {
+      box-shadow: inset 0 -2px $borderColorActive;
+      position: relative;
+      background-color: transparent;
+      border-bottom: medium none;
+    }
+
+    &.active {
+      color: #575757;
+      cursor: default;
+    }
+
+    &:hover {
+      color: $borderColorActive;
+      cursor: pointer;
+    }
+  }
+
+  tab-content {
+    clear: both;
+    display: block;
+    > div {
+      background-color: #fff;
+      border-radius: 0;
+      padding: 10px;
+      display: none;
+      &.visible {
+        display: block;
+      }
+    }
+
+    tab {
+      color: $subTabColor;
+      background-color: $subTabComplementary;
+      padding: 10px 15px !important;
+      border: none !important;
+      margin-bottom: 0 !important;
+      &.active {
+        color: $subTabComplementary;
+        background-color: $subTabColor;
+      }
+
+      tab-content {
+        > div {
+          border: medium none;
+        }
+      }
+    }
+  }
+}

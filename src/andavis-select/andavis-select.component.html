@@ -1,0 +1,7 @@
+<label class="select-label">
+  {{label}}
+  <select class="form-control" [formControl]="selection" [required]="required">
+    <option value="please_choose" *ngIf="!disableEmptySelection">{{ pleaseChooseLabel }}</option>
+    <option [value]="getValue(option)" *ngFor="let option of options">{{getLabel(option)}}</option>
+  </select>
+</label>
