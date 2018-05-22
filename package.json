@@ -10,12 +10,19 @@
   "bugs": {
     "url": "https://github.com/KaiBirkenstock/ionic-components/issues"
   },
-  "dependencies": {
-    "@angular/platform-browser": "5.2.10",
+  "dependencies": {},
+  "peerDependencies": {
     "@angular/core": "5.2.10",
-    "@angular/router": "5.2.10",
+    "@angular/common": "5.2.10"
+  },
+  "devDependencies": {
+    "@angular/core": "5.2.10",
     "@angular/common": "5.2.10",
+    "@angular/platform-browser": "5.2.10",
+    "@angular/router": "5.2.10",
     "@angular/forms": "5.2.10",
+    "@angular/compiler": "5.2.10",
+    "@angular/compiler-cli": "5.2.10",
     "@ngx-translate/core": "10.0.1",
     "uuid": "3.2.1",
     "vanilla-modal": "1.6.5",
@@ -28,19 +35,22 @@
     "bootbox": "4.4.0",
     "immutable": "3.8.2",
     "moment-round": "git+https://github.com/SpotOnInc/moment-round.git",
-    "moment-range": "4.0.0"
-  },
-  "devDependencies": {
+    "moment-range": "4.0.0",
     "@types/node": "^8.5.10",
-    "@angular/compiler": "5.2.10",
-    "@angular/compiler-cli": "5.2.10",
-    "@angular/core": "5.2.10",
     "typescript": "2.8.3",
     "rxjs": "5.5.6",
-    "zone.js": "0.8.20"
+    "zone.js": "0.8.20",
+    "gulp": "^3.9.1",
+    "gulp-inline-ng2-template": "^4.0.0",
+    "node-sass": "4.9.0"
   },
   "scripts": {
-    "build": "rm -rf dist aot && ngc && mkdir dist/scss && cp src/**/*.scss dist/scss"
+    "build": "npm run build:esm",
+    "build:esm": "gulp inline-templates && npm run ngcompile",
+    "build:esm:watch": "gulp build:esm:watch",
+    "clean:all": "npm run clean:tmp && rimraf node_modules",
+    "clean:tmp": "rimraf dist tmp",
+    "ngcompile": "ngc"
   },
   "typings": "dist/index.d.ts"
 }
