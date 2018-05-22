@@ -13,7 +13,11 @@
   "dependencies": {},
   "peerDependencies": {
     "@angular/core": "5.2.10",
-    "@angular/common": "5.2.10"
+    "@angular/common": "5.2.10",
+    "bootbox": "4.4.0",
+    "moment-range": "4.0.0",
+    "timers": "0.1.1",
+    "moment-round": "git+https://github.com/SpotOnInc/moment-round.git"
   },
   "devDependencies": {
     "@angular/core": "5.2.10",
