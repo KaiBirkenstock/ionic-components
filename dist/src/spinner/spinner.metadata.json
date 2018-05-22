@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"SpinnerComponent":{"__symbolic":"class","decorators":[{"__symbolic":"call","expression":{"__symbolic":"reference","module":"@angular/core","name":"Component","line":2,"character":1},"arguments":[{"selector":"spinner","template":"<i class=\"fa fa-2x fa-asterisk fa-spin\"></i>"}]}]}}}]
